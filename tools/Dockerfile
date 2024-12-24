@@ -12,5 +12,7 @@ RUN apt-get -y update && apt-get install -y --fix-missing python3-pip pipx vim p
     && pipx install rio-rgbify --include-deps \
     && pipx install rio-mbtiles --include-deps \
     && pipx install mbutil \
-    && pipx ensurepath \
     && apt-get clean
+
+## add pipx bin to path
+ENV PATH="/root/.local/bin:$PATH"
